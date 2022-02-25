@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<input type="text" id="ls">
+<button onclick="checkDate()">Tính số ngày</button>
+<br>
+<h1 id="dt"></h1>
+<script>
+    let mon;
+    let date;
+
+    function checkDate() {
+
+        mon = +document.getElementById('ls').value;
+
+        switch (mon) {
+            case 1:
+                date = 'Tháng 1 có 31 ngày';
+                break;
+            case 2:
+                date = 'Tháng 2 có 28 hoặc 29';
+                break;
+            case 3:
+                date = 'Tháng 3 có 31 ngày';
+                break;
+            case 4:
+                date = 'Tháng 4 có 30 ngày';
+                break;
+            case 5:
+                date = 'Tháng 5 có 31 ngày';
+                break;
+            case 6:
+                date = 'Tháng 6 có 30 ngày';
+                break;
+            case 7:
+                date = 'Tháng 7 có 31 ngày';
+                break;
+            case 8:
+                date = 'Tháng 8 có 31 ngày';
+                break;
+            case 9:
+                date = 'Tháng 9 có 30 ngày';
+                break;
+            case 10:
+                date = 'Tháng 10 có 31 ngày';
+                break;
+            case 11:
+                date = 'Tháng 11 có 30 ngày';
+                break;
+            case 12:
+                date = 'Tháng 12 có 31 ngày';
+                break;
+            default:
+                'Undefined!';
+        }
+
+        document.getElementById('dt').innerHTML = date;
+
+        let cham = document.getElementById('dt');
+        cham.addEventListener('mouseover',mouseover);
+        cham.addEventListener('mouseout',mouseout);
+
+        function mouseover(){
+            document.getElementById('dt')
+            .style.color = 'red';
+        }
+
+        function mouseout(){
+            document.getElementById('dt').style.color = 'green';
+        }
+    }
+</script>
+</body>
+</html>
